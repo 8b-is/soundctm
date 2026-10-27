@@ -10,6 +10,7 @@ sys.path.insert(
 
 from soundctm_pq import (
     Q16_ONE,
+    Bfp64AudioLatentBlock,
     cfg_blend_bfp64_pq,
     gamma_step_params_pq_q16,
     get_sigmas_karras_pq_q16,
@@ -17,6 +18,15 @@ from soundctm_pq import (
 
 
 class TestSonySoundCtmPq(unittest.TestCase):
+    def test_bfp64_block_is_1_98x_smaller_than_fp32(self):
+        values = [math.sin(0.1 * i) for i in range(64)]
+        block = Bfp64AudioLatentBlock.quantize(values)
+        self.assertEqual(len(block.mantissas), 64)
+        self.assertLessEqual(max(abs(m) for m in block.mantissas), 32767)
+        packed_bytes = 2 * len(block.mantissas) + 1
+        self.assertEqual(packed_bytes, 129)
+        self.assertAlmostEqual((64 * 4) / packed_bytes, 1.9845, places=3)
+
     def test_karras_rho7_pq_schedule_accuracy(self):
         steps = 17
         sigma_min = 0.002

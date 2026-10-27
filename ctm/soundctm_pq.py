@@ -5,7 +5,7 @@ Jump Integrator, and Omni `BFP-64` Classifier-Free Guidance for Real-Time Game /
 PlayStation Sound Synthesis
 ====================================================================================
 
-Brought to you by **Chris, Hue & the 8b-is team** (https://8b.is · WhatsApp: `+1 757-614-7542`):
+Brought to you by **Chris, Hue & the 8b-is team** (https://8b.is):
   - `8b-is/alexiai` — Sovereign offline AI substrate (`GAIA-MLX-QUANT`, ternary b1.58,
     Quantum 64-Trit bitplanes, `BFP-64`, `wupz`)
   - `8b-is/Engram` — Conditional Memory via Scalable Lookup with `BFP-64` & `p/q`
@@ -31,7 +31,8 @@ What This Module Adds to Sony `SoundCTM` (`ctm/inference_sampling.py`)
 
 3. **Omni `BFP-64` Classifier-Free Guidance (`cfg_blend_bfp64_pq`)**:
    - Compresses `denoised_text` and `denoised_uncond` audio latent spectrograms by
-     `3.94x` (`65 B / 64 values`) and evaluates the CFG blend:
+     `1.98x` (`129 B / 64 values`, `i16` mantissas + shared exponent) and
+     evaluates the CFG blend:
        $$\hat{x}_0 = x_{\text{uncond}} + \nu (x_{\text{text}} - x_{\text{uncond}})$$
      directly on aligned integer mantissas.
 """
