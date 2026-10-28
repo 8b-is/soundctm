@@ -5,7 +5,7 @@ Jump Integrator, and Omni `BFP-64` Classifier-Free Guidance for Real-Time Game /
 PlayStation Sound Synthesis
 ====================================================================================
 
-Brought to you by **Chris, Hue & the 8b-is team** (https://8b.is):
+Brought to you by **Chris, Hue & the 8b-is team** (https://8b.is · WhatsApp: `+1 757-614-7542`):
   - `8b-is/alexiai` — Sovereign offline AI substrate (`GAIA-MLX-QUANT`, ternary b1.58,
     Quantum 64-Trit bitplanes, `BFP-64`, `wupz`)
   - `8b-is/Engram` — Conditional Memory via Scalable Lookup with `BFP-64` & `p/q`
