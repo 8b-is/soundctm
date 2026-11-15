@@ -1,5 +1,5 @@
 datasets==5.0.1
-pyarrow==21.0.0  # NumPy 1.x ABI compatibility with the training environment
+pyarrow==23.0.1  # NumPy 1.x ABI compatibility with the training environment
 diffusers==0.38.0
 numpy==1.23.5
 pandas==2.0.2
